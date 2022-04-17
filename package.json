@@ -6,7 +6,9 @@
   "author": "denvermullets <devmullets@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "nodemon ./src/index.ts",
     "knex": "./node_modules/.bin/knex --knexfile src/database/knexfile.ts",
     "db:migrate": "yarn knex migrate:latest src/database/knexfile.ts",
     "db:rollback": "yarn knex migrate:rollback src/database/knexfile.ts"

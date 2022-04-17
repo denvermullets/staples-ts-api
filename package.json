@@ -6,7 +6,10 @@
   "author": "denvermullets <devmullets@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/index.ts"
+    "start": "nodemon ./src/index.ts",
+    "knex": "./node_modules/.bin/knex --knexfile src/database/knexfile.ts",
+    "db:migrate": "yarn knex migrate:latest src/database/knexfile.ts",
+    "db:rollback": "yarn knex migrate:rollback src/database/knexfile.ts"
   },
   "engines": {
     "node": ">=16.14.2"
@@ -24,6 +27,8 @@
     "axios": "^0.26.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "knex": "^1.0.7",
+    "pg": "^8.7.3"
   }
 }
